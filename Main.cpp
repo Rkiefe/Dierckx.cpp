@@ -80,15 +80,18 @@ void test_1d_cubic(){
 }
 
 void test_2d_spline(){
-    std::vector<double> x, y, z;
+
     const int N = 50;
+    std::vector<double> x(N*N);
+    std::vector<double> y(N*N);
+    std::vector<double> z(N*N);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             double xi = (double)i / (N - 1);   // 0 .. 1
             double yj = (double)j / (N - 1);   // 0 .. 1
-            x.push_back(xi);
-            y.push_back(yj);
-            z.push_back(trial_2d_fun(xi, yj));
+            x[i*N + j] = xi;
+            y[i*N + j] = yj;
+            z[i*N + j] = trial_2d_fun(xi, yj);
         }
     }
 
