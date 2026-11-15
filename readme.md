@@ -3,7 +3,7 @@
 ### Examples
 
 Interpolate a cubic function with a linear fit
-```C++
+```cpp
 std::vector<double> x(100);
 std::vector<double> y(100);
 
