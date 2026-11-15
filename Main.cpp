@@ -4,8 +4,8 @@
 // #include "spline1d.hpp"
 // #include "spline2d.hpp"
 
-#include "dierckx.h"
-#include "dierckx2d.h"
+#include "src/dierckx1d.h"
+#include "src/dierckx2d.h"
 
 
 double trial_1d_fun(double xq){
@@ -120,6 +120,6 @@ int main() {
     test_1d_quadratic();
     test_1d_cubic();
     test_2d_spline();
-    
+
     return 0;
 }
