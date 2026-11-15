@@ -1,4 +1,4 @@
-## A modern C++ port of Fotran Dierckx Spline and Interpolation methods.
+## A modern C++ port of Fortran Dierckx Spline and Interpolation methods.
 
 ### Examples
 
