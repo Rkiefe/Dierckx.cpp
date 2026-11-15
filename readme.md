@@ -1,8 +1,8 @@
-## A modern C++ port of Fortran Dierckx Spline and Interpolation methods.
+# A modern C++ port of Fortran Dierckx Spline and Interpolation methods.
 
-### Examples
+## Examples
 
-Interpolate a cubic function with a linear fit
+### Interpolate a cubic function with a linear fit
 ```cpp
 std::vector<double> x(100);
 std::vector<double> y(100);
@@ -23,7 +23,7 @@ Compile with:
 - **note:** if you want separate files: 
     `g++ -std=c++17 -Wall -O2 -o main Main.cpp spline1d.cpp`
 
-Interpolate `f = x^2 + y^3` with a 2D spline
+### Interpolate `f = x^2 + y^3` with a 2D spline
 ```cpp
 // Initialize 3 vectors
 const int N = 50;
