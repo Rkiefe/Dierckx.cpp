@@ -83,8 +83,8 @@ private:
                        std::vector<double>& t, int& n,
                        std::vector<double>& fpint, std::vector<int>& nrdata,
                        int& nrint, int nest, int istart);
-    static double fprati(double p1, double f1, double p2, double f2,
-                         double p3, double f3);
+    static double fprati(double &p1, double &f1, double p2, double f2,
+                         double &p3, double &f3);
 
     void fpcurf(int iopt, int maxit, double tol);
     void fpchec(int& ier) const;

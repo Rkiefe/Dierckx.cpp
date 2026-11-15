@@ -164,21 +164,27 @@ void Spline1D::fpknot(const std::vector<double>& x, int /*m*/,
 }
 
 // Rational interpolation for smoothing parameter p
-double Spline1D::fprati(double p1, double f1, double p2, double f2,
-                        double p3, double f3)
+double Spline1D::fprati(double& p1, double& f1,
+                        double  p2, double  f2,
+                        double& p3, double& f3)
 {
     double p;
     if (p3 > 0.0) {
+        // finite right endpoint
         double h1 = f1 * (f2 - f3);
         double h2 = f2 * (f3 - f1);
         double h3 = f3 * (f1 - f2);
         p = -(p1 * p2 * h3 + p2 * p3 * h1 + p3 * p1 * h2) /
              (p1 * h1 + p2 * h2 + p3 * h3);
     } else {
+        // p3 == "infinity" sentinel (negative)
         p = (p1 * (f1 - f3) * f2 - p2 * (f2 - f3) * f1) / ((f1 - f2) * f3);
     }
-    if (f2 >= 0.0) { /* f1 already > 0 */ }
-    else           { /* f3 already < 0 */ }
+
+    // Tighten the bracket in the caller (this is the missing piece).
+    if (f2 >= 0.0) { p1 = p2; f1 = f2; }
+    else           { p3 = p2; f3 = f2; }
+
     return p;
 }
 
