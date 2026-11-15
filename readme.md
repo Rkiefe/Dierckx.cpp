@@ -17,5 +17,9 @@ double yq = spl(0.5); // Evaluate the spline on target point
 ```
 
 Compile with:
-`g++ -o main Main.cpp`
+- **note:** if you use the header-only version:
+    `g++ -o main Main.cpp`
+
+- **note:** if you want separate files: 
+    `g++ -std=c++17 -Wall -O2 -o main Main.cpp spline1d.cpp`
 
